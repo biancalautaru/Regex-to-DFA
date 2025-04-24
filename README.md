@@ -11,7 +11,9 @@
 
 ## 📝 Descriere
 
-Acest proiect implementează un convertor de expresii regulate într-un automat finit determinist (DFA) și testarea acceptării cuvintelor fără a utiliza biblioteci externe pentru manipularea expresiilor regulate sau a automatelor. Funcționalitățile principale includ:
+Acest proiect implementează un convertor de expresii regulate într-un automat finit determinist (DFA) și testarea acceptării cuvintelor fără a utiliza biblioteci externe pentru manipularea expresiilor regulate sau a automatelor.
+
+Funcționalitățile principale includ:
 
 - Parsarea și transformarea în formă postfixată a unei expresii regulate.
 - Construirea unui λ-NFA dintr-o expresie regulată în formă postfixată.
@@ -67,22 +69,22 @@ project-root/
 
 ## 🤔 Decizii de implementare
 
-#### Transformarea expresiei regulate în formă postfixată
+### Transformarea expresiei regulate în formă postfixată
 
 - Am introdus **`·`** între literali pentru a ușura transformarea.
 - Am folosit algoritmul *shunting yard* pentru a converti expresia utilizând o stivă.
 
-#### Transformarea expresiei regulate în formă postfixată în λ-NFA
+### Transformarea expresiei regulate în formă postfixată în λ-NFA
 
 - Am folosit *Algoritmul lui Thompson* pentru a construi un λ-NFA utilizând o stivă.
 - Am scris funcții separate pentru transformarea fiecărei „bucăți” din expresia regulată.
 
-#### Transformarea λ-NFA în DFA
+### Transformarea λ-NFA în DFA
 
 - Am găsit lambda-închiderile pentru fiecare stare folosind un algoritm DFS. 
 - Am folosit o coadă pentru a procesa eficient și ordonat toate stările.
 
-#### Verificarea acceptării cuvintelor de DFA
+### Verificarea acceptării cuvintelor de DFA
 
 - Începând cu starea inițială, am verificat pentru fiecare literă a cuvântului dacă se poate trece într-o altă stare cu acea literă.
 - Am verificat dacă atunci când s-a terminat cuvântul, s-a ajuns într-o stare finală.
