@@ -39,7 +39,7 @@ project-root/
 ### Descrierea fișierelor
 
 - **`main.py`**: citește inputul din `input.json` și scrie rezultatele testării cuvintelor în `results.txt`
-- **`regex_utils.py`**: modul pentru parsarea unei expresii regulată și conversia ei în formă postfixată folosind algoritmul *shunting yard*
+- **`regex_utils.py`**: modul pentru parsarea unei expresii regulate și conversia ei în formă postfixată folosind algoritmul *shunting yard*
 - **`postfix_to_lambda_nfa.py`**: modul pentru transformarea unei expresii regulate în λ-NFA folosind *Algoritmul lui Thompson*
 - **`lambda_nfa_utils.py`**: modul pentru transformarea fiecărei operații într-un λ-NFA
    - **`|`** (reuniune)
@@ -48,7 +48,7 @@ project-root/
    - **`+`** (stelare cu minim o apariție)
    - **`?`** (apariție opțională)
 - **`lambda_nfa_to_dfa.py`**: modul pentru transformarea unui λ-NFA în DFA folosind *subset construction*
-- **`dfa_string_acceptance.py`**: modul pentru verificarea acceptării unui cuvând de un DFA
+- **`dfa_string_acceptance.py`**: modul pentru verificarea acceptării unui cuvânt de un DFA
 - **`input.json`**: 20 de expresii regulate, fiecare cu cuvinte pentru testat și rezultatele așteptate
 - **`results.txt`**: rezultatele testării tuturor cuvintelor
 
@@ -60,7 +60,7 @@ project-root/
    ```
    git clone https://github.com/biancalautaru/Regex-to-DFA
    ```
-2. rulare main:
+2. rulare program:
    ```
    python3 main.py
    ```
@@ -82,7 +82,7 @@ project-root/
 ### Transformarea λ-NFA în DFA
 
 - Am găsit lambda-închiderile pentru fiecare stare folosind un algoritm DFS. 
-- Am folosit o coadă pentru a procesa eficient și ordonat toate stările.
+- Am folosit o coadă pentru a procesa în mod eficient și ordonat toate stările.
 
 ### Verificarea acceptării cuvintelor de DFA
 
