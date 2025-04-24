@@ -1,0 +1,127 @@
+R1 -> a*
+     -> expected: True, actual: True
+    a -> expected: True, actual: True
+    aaaa -> expected: True, actual: True
+    b -> expected: False, actual: False
+
+R2 -> (ab)*
+     -> expected: True, actual: True
+    ab -> expected: True, actual: True
+    abab -> expected: True, actual: True
+    aba -> expected: False, actual: False
+
+R3 -> a(b|c)*
+    a -> expected: True, actual: True
+    ab -> expected: True, actual: True
+    acb -> expected: True, actual: True
+    b -> expected: False, actual: False
+
+R4 -> (a|b)*abb
+    abb -> expected: True, actual: True
+    aabb -> expected: True, actual: True
+    ababb -> expected: True, actual: True
+    ababa -> expected: False, actual: False
+
+R5 -> 0(0|1)*1
+    01 -> expected: True, actual: True
+    001 -> expected: True, actual: True
+    011 -> expected: True, actual: True
+    10 -> expected: False, actual: False
+
+R6 -> (a|b|c)+
+    a -> expected: True, actual: True
+    abc -> expected: True, actual: True
+    cbab -> expected: True, actual: True
+     -> expected: False, actual: False
+
+R7 -> a?b+
+    b -> expected: True, actual: True
+    ab -> expected: True, actual: True
+    abb -> expected: True, actual: True
+    a -> expected: False, actual: False
+
+R8 -> (ab|cd)+
+    ab -> expected: True, actual: True
+    cd -> expected: True, actual: True
+    abcd -> expected: True, actual: True
+    ac -> expected: False, actual: False
+
+R9 -> (a|b)*a(a|b)
+    aa -> expected: True, actual: True
+    ba -> expected: False, actual: False
+    aba -> expected: False, actual: False
+    ab -> expected: True, actual: True
+
+R10 -> (a*b*)*
+     -> expected: True, actual: True
+    a -> expected: True, actual: True
+    b -> expected: True, actual: True
+    aabbbabba -> expected: True, actual: True
+
+R11 -> (a|b)*abb(a|b)*
+    abb -> expected: True, actual: True
+    aabb -> expected: True, actual: True
+    ababb -> expected: True, actual: True
+    aba -> expected: False, actual: False
+
+R12 -> ((ab)*|(ba)*)c
+    c -> expected: True, actual: True
+    abc -> expected: True, actual: True
+    abababc -> expected: True, actual: True
+    bac -> expected: True, actual: True
+    abac -> expected: False, actual: False
+
+R13 -> (a(bc)*d)*
+     -> expected: True, actual: True
+    ad -> expected: True, actual: True
+    abcd -> expected: True, actual: True
+    abcbcd -> expected: True, actual: True
+    abcbcad -> expected: False, actual: False
+
+R14 -> a(b|c(d|e))*f
+    af -> expected: True, actual: True
+    abf -> expected: True, actual: True
+    acddef -> expected: False, actual: False
+    acf -> expected: False, actual: False
+    adf -> expected: False, actual: False
+
+R15 -> (a|b)*((aa)(bb))(a|b)*
+    aabb -> expected: True, actual: True
+    abaaabbab -> expected: True, actual: True
+    ababb -> expected: False, actual: False
+    aabbaa -> expected: True, actual: True
+
+R16 -> (a?b?c?)*
+     -> expected: True, actual: True
+    abcabc -> expected: True, actual: True
+    abcc -> expected: True, actual: True
+    aabbcc -> expected: True, actual: True
+
+R17 -> ((ab|cd)+e)*
+     -> expected: True, actual: True
+    abe -> expected: True, actual: True
+    ababe -> expected: True, actual: True
+    abecdabe -> expected: True, actual: True
+
+R18 -> (a(bc)?d)+
+    ad -> expected: True, actual: True
+    abcd -> expected: True, actual: True
+    adbcd -> expected: False, actual: False
+    abcbcd -> expected: False, actual: False
+
+R19 -> (a|b)+c+d*
+    abc -> expected: True, actual: True
+    aabcc -> expected: True, actual: True
+    bbccddd -> expected: True, actual: True
+    cc -> expected: False, actual: False
+    d -> expected: False, actual: False
+
+R20 -> a(bc)*d(e|f(g|h))*
+    ad -> expected: True, actual: True
+    abcd -> expected: True, actual: True
+    abcbcd -> expected: True, actual: True
+    adf -> expected: False, actual: False
+    adfgh -> expected: False, actual: False
+    adfg -> expected: True, actual: True
+
+All tests passed!
