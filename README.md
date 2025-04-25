@@ -1,16 +1,5 @@
 # Conversia unei expresii regulate în automat finit determinist (DFA)
 
-## 📖 Cuprins
-
-- [📝 Descriere](#-descriere)
-- [🗃️ Structura proiectului](#️-structura-proiectului)
-- [💻 Rulare](#-rulare)
-- [🤔 Decizii de implementare](#-decizii-de-implementare)
-
----
-
-## 📝 Descriere
-
 Acest proiect implementează un convertor de expresii regulate într-un automat finit determinist (DFA) și testarea acceptării cuvintelor fără a utiliza biblioteci externe pentru manipularea expresiilor regulate sau a automatelor.
 
 Funcționalitățile principale includ:
@@ -19,6 +8,14 @@ Funcționalitățile principale includ:
 - Construirea unui λ-NFA dintr-o expresie regulată în formă postfixată.
 - Conversia unui λ-NFA în DFA.
 - Verificarea acceptării cuvintelor de un DFA.
+
+---
+
+## 📖 Cuprins
+
+- [🗃️ Structura proiectului](#️-structura-proiectului)
+- [💻 Rulare](#-rulare)
+- [🤔 Decizii de implementare](#-decizii-de-implementare)
 
 ---
 
